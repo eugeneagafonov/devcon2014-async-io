@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThreadsOverhead", "ThreadsO
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServerLoadTest", "ServerLoadTest\ServerLoadTest.csproj", "{FF62D9B8-9858-4340-9550-5AEFEC78351C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AsyncIOBindHandle", "AsyncIOBindHandle\AsyncIOBindHandle.csproj", "{16227FD0-5228-48D3-AD21-F521AB528731}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{FF62D9B8-9858-4340-9550-5AEFEC78351C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FF62D9B8-9858-4340-9550-5AEFEC78351C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FF62D9B8-9858-4340-9550-5AEFEC78351C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{16227FD0-5228-48D3-AD21-F521AB528731}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{16227FD0-5228-48D3-AD21-F521AB528731}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{16227FD0-5228-48D3-AD21-F521AB528731}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{16227FD0-5228-48D3-AD21-F521AB528731}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
