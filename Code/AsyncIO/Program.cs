@@ -19,7 +19,8 @@ namespace Devcon2014.AsyncIO
 		private static async Task ProcessAsynchronousIO()
 		{
 			using (var stream = new FileStream(
-				"test1.txt", FileMode.Create, FileAccess.ReadWrite, FileShare.None, BUFFER_SIZE))
+				"test1.txt", FileMode.Create, FileAccess.ReadWrite,
+				FileShare.None, BUFFER_SIZE))
 			{
 				Console.WriteLine("1. Uses I/O Threads: {0}", stream.IsAsync);
 
@@ -29,11 +30,11 @@ namespace Devcon2014.AsyncIO
 			}
 
 			using (var stream =
-				#region SECRET
-				new FileStream("test2.txt", FileMode.Create, FileAccess.ReadWrite, FileShare.None,
+			#region SECRET
+ new FileStream("test2.txt", FileMode.Create, FileAccess.ReadWrite, FileShare.None,
 					BUFFER_SIZE, FileOptions.Asynchronous
-					#endregion
-					))
+			#endregion
+))
 			{
 				Console.WriteLine("2. Uses I/O Threads: {0}", stream.IsAsync);
 
@@ -43,10 +44,10 @@ namespace Devcon2014.AsyncIO
 			}
 
 			using (FileStream stream = File.Create("test3.txt",
-				#region SECRET
-				BUFFER_SIZE, FileOptions.Asynchronous
-				#endregion
-				))
+			#region SECRET
+ BUFFER_SIZE, FileOptions.Asynchronous
+			#endregion
+))
 			using (var sw = new StreamWriter(stream))
 			{
 				Console.WriteLine("3. Uses I/O Threads: {0}", stream.IsAsync);
@@ -55,7 +56,8 @@ namespace Devcon2014.AsyncIO
 
 			using (var sw = new StreamWriter("test4.txt", true))
 			{
-				Console.WriteLine("4. Uses I/O Threads: {0}", ((FileStream) sw.BaseStream).IsAsync);
+				Console.WriteLine("4. Uses I/O Threads: {0}", 
+					((FileStream)sw.BaseStream).IsAsync);
 				await sw.WriteAsync(CreateFileContent());
 			}
 
@@ -98,8 +100,8 @@ namespace Devcon2014.AsyncIO
 
 		private static async Task<long> SumFileContent(string fileName)
 		{
-			using (var stream = new FileStream(fileName, FileMode.Open, FileAccess.Read,
-				FileShare.None, BUFFER_SIZE, FileOptions.Asynchronous))
+			using (var stream = new FileStream(fileName, FileMode.Open,
+				FileAccess.Read, FileShare.None, BUFFER_SIZE, FileOptions.Asynchronous))
 			using (var sr = new StreamReader(stream))
 			{
 				long sum = 0;
